@@ -2,14 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>custom-element demo</title>
+    <title>stock-ticker demo</title>
   </head>
   <body>
-    <custom-element></custom-element>
+    <stock-ticker initial-value="100" value="101"></stock-ticker>
 
     <script type="module">
-      // import 'https://unpkg.com/@github/custom-element-boilerplate@latest/dist/custom-element.js'
-      import '../src/custom-element.ts'
+      // import 'https://unpkg.com/@github/stock-ticker-boilerplate@latest/dist/stock-ticker.js'
+      import '../src/stock-ticker-element.ts'
+      import '../src/number-format-element.ts'
+      setInterval(() => {
+        const change = Math.floor((Math.random() * 20 -10))
+        document.querySelector('stock-ticker').value += change
+      }, 1000)
     </script>
   </body>
 </html>
